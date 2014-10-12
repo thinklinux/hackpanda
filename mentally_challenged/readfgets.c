@@ -1,18 +1,29 @@
 #include <stdio.h>
 #include <string.h>
 
+int is_whitespace(char ch) {
+	return ch == ' ' || ch == '\f' || ch == '\n' ||
+			ch == '\r' || ch == '\t' || ch == '\v';
+}
+
 int main() {
-	char str[80];
+	int BUFFER_SIZE = 10;
+	char str[BUFFER_SIZE];
 	int i;
 
-	printf("enter some stuff:\n");
-	fgets(str, 10, stdin);
+	printf("Enter some stuff:\n");
+	fgets(str, BUFFER_SIZE, stdin);
+	printf("Your first word is: \n");
 
-	i = strlen(str)-1;
-	if(str[i] == '\n')
-		str[i] = '\0';
+	for(i=0; i < BUFFER_SIZE; i++) {
+		if(is_whitespace(str[i])) {
+			break;
+		}
 
-	printf("Your input: %s\n", str);
+		printf("%c", str[i]);
+	}
+
+	printf("\n");
 
 	return 0;
 }
