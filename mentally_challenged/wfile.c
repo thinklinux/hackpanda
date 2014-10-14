@@ -45,7 +45,5 @@ int main(int argc, char *argv[]) {
 
 	printf("The file has been successfully written!\n");
 
-	printf("\n");
-
 	return 0;
 }
