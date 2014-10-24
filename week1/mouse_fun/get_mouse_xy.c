@@ -1,4 +1,6 @@
 // cat /proc/bus/input/devices | find what eventN you need for your mouse
+// kernel documentation https://www.kernel.org/doc/Documentation/input/input.txt
+// types are defined in include/linux.input.h
 
 #include <stdio.h>
 #include <string.h>
